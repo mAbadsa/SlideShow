@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Untitle</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <style>
+        #rtl {
+            direction: rtl;
+        }
+
+        .meter {
+            height: 50px;
+            /* Can be anything */
+            position: relative;
+            background: #555;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+            padding: 5px;
+            box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .meter>span {
+            display: block;
+            height: 100%;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            background-color: rgb(255, 10, 33);
+            background-image: linear-gradient(center bottom,
+                rgb(253, 10, 33) 37%,
+                rgb(223, 10, 23) 69%);
+            box-shadow:
+                inset 0 2px 9px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            color: #fff;
+            line-height: 2.5;
+            font-size: 20px;
+        }
+
+        .meter>span:after,
+        .animate>span>span {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(-45deg,
+                rgba(255, 255, 255, .2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, .2) 50%,
+                rgba(255, 255, 255, .2) 75%,
+                transparent 75%,
+                transparent);
+            z-index: 1;
+            background-size: 50px 50px;
+            animation: move 2s linear infinite;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            overflow: hidden;
+            animation: move 3s linear infinite;
+        }
+
+        .animate>span:after {
+            display: none;
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 50px 50px;
+            }
+
+            100% {
+                background-position: 0px 0px;
+            }
+        }
+
+        /*------ Start swiper -----*/
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide ">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+
+    <script src="assets/Libs/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="assets/Libs/bootstrap/popper.min.js"></script>
+    <script src="assets/Libs/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/Libs/Vue/vue.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- Swiper JS -->
+    <script src="swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+    </script>
+</body>
+
+</html>
